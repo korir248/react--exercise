@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export class TodoItems extends Component {
+const TodoItems = ()=>{
     getStyle = ()=>{
         
     //     if(this.props.todo.isCompleted) {
@@ -12,14 +12,14 @@ export class TodoItems extends Component {
     //     return {color: 'red'}
     // }
     }
-    render() {
-        return (
-            <div style={this.getStyle()}>
+    return (
+            <div >
                 <p>{this.props.todo.id}: {this.props.todo.title} </p>
+        
             </div>
         )
     }
-}
+
 TodoItems.propTypes ={
     todo: PropTypes.object.isRequired
 }

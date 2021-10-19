@@ -1,2 +1,3 @@
 # react--exercise
-Todo list app
+Learning react
+

@@ -1,44 +1,48 @@
 import React, { useState } from 'react'
 import  TodoItems  from './TodoItems'
 // import PropTypes from 'prop-types'
-import PropTypes from 'prop-types'
 
 const Todos=()=>{
-    const [todo, addTodo] = useState(initialState)
+    const [todo, setTodo] = useState("")
+
+    const onSubmit = (e) =>{
+        e.preventDefault()
+        console.log("Add Todo:" +todo )
+        
+    }
+
+
     return (
             <div>
             <div>
                 <h2>Add To do</h2>
             <section>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="add-todo">
-                        <input type="text" placeholder="Add todo"></input>
+                    <input
+				type='text'
+				placeholder='Add todo...'
+				value={todo}
+				onChange={(event) => setTodo(event.target.value)}
+			></input>
                     </div>
-                    <div className="add-todo">
-                        <button type="submit" onClick={showTodo}>Add</button>
+                    <div className="add-todo-btn">
+                        <button type="submit" >Add</button>
                     </div>
                 </form>
             </section>
             </div>
             <div className="todos">
             <h3>My todos</h3>
-            {/* {this.props.todos.map((todo)=>(
-                <TodoItems key={todo.id}todo={todo}/>
-            ))} */}
+            <TodoItems todo={todo}/>
                 
             </div>
             </div>
         )            
     }
-const showTodo = (e) =>{
-    e.preventDefault()
-    console.log(1)
-
-
-}
-
-Todos.propTypes = {
-    todos: PropTypes.array.isRequired
-}
+// const showTodo = (e) =>{
+//     e.preventDefault()
+//     console.log(1)
+// }
 
 export default Todos

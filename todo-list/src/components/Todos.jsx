@@ -40,9 +40,5 @@ const Todos=()=>{
             </div>
         )            
     }
-// const showTodo = (e) =>{
-//     e.preventDefault()
-//     console.log(1)
-// }
 
 export default Todos

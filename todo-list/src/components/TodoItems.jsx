@@ -2,10 +2,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 
 const TodoItems = (props)=>{
+    let todoText= document.createElement('h4')
     
     return (
             <div >
-                {/* {document.createElement<p>{props.todo}} </p> */}
+                {props.todo}
         
             </div>
         )

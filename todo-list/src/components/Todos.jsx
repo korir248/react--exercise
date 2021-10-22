@@ -34,6 +34,7 @@ const Todos=()=>{
             </div>
             <div className="todos">
             <h3>My todos</h3>
+        
             <TodoItems todo={todo}/>
                 
             </div>

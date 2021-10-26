@@ -11,6 +11,9 @@
 # production
 /build
 
+#ReduxCheatsheet.md
+ReduxCheatsheet.md
+
 # misc
 .DS_Store
 .env.local

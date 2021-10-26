@@ -1,4 +1,4 @@
-import { ADD_TO_CART, ADD_NUM_ITEMS_CART } from "../types";
+import { ADD_TO_CART, ADD_NUM_ITEMS_CART, REDUCE_NUM_ITEMS_CART, REMOVE_FROM_CART } from "../types";
 
 
 const myCart= []
@@ -10,9 +10,17 @@ const cartReducer = (state= myCart,action)=>{
                 ...state,  
 
             }
+        case REMOVE_FROM_CART:
+            return {
+                
+            }
         case ADD_NUM_ITEMS_CART:
             return {
                 
+            }
+        case REDUCE_NUM_ITEMS_CART:
+            return {
+
             }
     
         default:

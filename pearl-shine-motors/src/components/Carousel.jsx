@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Carousel = () => {
+const Carousel = () => { 
+
+
     
-
-
     return (
         <div>
             <div className="carousel">

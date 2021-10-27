@@ -1,14 +1,17 @@
 import './App.css';
 import Header from './components/Header';
-import CarDetails from './components/CarDetails';
+
 import Products from './components/Products';
+import Carousel from './components/Carousel';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
     <Header/>
-    <CarDetails />
-    <Products />
+    <Carousel/>
+    <Products/>
+    <Cart/>
     
     </div>
   );

@@ -1,12 +1,23 @@
 import React from 'react'
+import { useDispatch } from "react-redux";
+import { searchByMakeModelYear } from '../../redux/actions/searchActions';
 
-function SearchBar() {
+const SearchBar = ()=> {
+
+    const dispatch = useDispatch()
+
+    const searchForCar = () =>{
+        console.log("Searching...");
+        dispatch(searchByMakeModelYear)
+
+    }
+    let dummy
 
     return (
         <div>
-            <div class="topnav">
-                
-                <input type="text" placeholder="Search.."></input>
+            <div class="topnav">                
+                <input type="text" onChange={dummy} placeholder="Search by make, model or year.." ></input>
+                <button onClick={searchForCar}>Search</button>
             </div>    
         </div>
     )

@@ -1,4 +1,4 @@
-import {ADD_TO_CART, ADD_NUM_ITEMS_CART, REDUCE_NUM_ITEMS_CART, REMOVE_FROM_CART} from '../types'
+import {ADD_TO_CART, INCREASE_QUANTITY, REDUCE_QUANTITY, REMOVE_FROM_CART} from '../types'
 
 
 export const addToCart = (car)=>{
@@ -16,16 +16,16 @@ export const removeFromCart= (id)=>{
     }
 }
 
-export const addNumItemsCart= (quantity)=>{
+export const increaseQuantity= (quantity)=>{
     return {
-        type: ADD_NUM_ITEMS_CART,
+        type: INCREASE_QUANTITY,
         payload: quantity
     }
 }
 
-export const reduceNumItemsCart= (quantity)=>{
+export const reduceQuantity= (quantity)=>{
     return {
-        type: REDUCE_NUM_ITEMS_CART,
+        type: REDUCE_QUANTITY,
         payload: quantity
 
     }

@@ -5,6 +5,6 @@ import carReducer from "./reducers/carReducer";
 import thunk from "redux-thunk";
 
 
-const rootReducer = combineReducers({car: carReducer, cart: cartReducer})
+const rootReducer = combineReducers({cart: cartReducer,car: carReducer})
 
 export const store= createStore(rootReducer, applyMiddleware(thunk))

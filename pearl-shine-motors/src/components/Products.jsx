@@ -5,17 +5,19 @@ import { useSelector } from "react-redux";
 const Products = ()=>{
 
     const cars = useSelector(state => state.car)
-    console.log(cars)
-
-    const cart = useSelector(state => state.cart)
-    console.log(cart);
+    // console.log(cars)
+    
+    const myCart = useSelector(state => state.cart)
+    // console.log(myCart);
     
 
     const dispatch = useDispatch()
     
     const addingToCart=()=>{
-        console.log("Added to Cart")   
         dispatch(addToCart)
+        console.log("Added to Cart")
+        console.log(myCart);
+         
     }
 
     return (
@@ -23,7 +25,7 @@ const Products = ()=>{
         {cars.map(singleCar=>(
         <div className="card">
         <div className="portrait">
-        <img src={singleCar.image} alt="Car" height="400px" />
+        <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
         </div>
             
             <p>Make: {singleCar.make}</p> 
@@ -32,7 +34,7 @@ const Products = ()=>{
             <p>{singleCar.year_of_prod}</p>
             <p>Price: Ksh. {singleCar.price}</p>
             
-            <button onClick={addingToCart}>Add to cart</button>
+            <button className="addtoCartBtn button" onClick={addingToCart}>Add to cart</button>
         </div>)
         )}
         </div>

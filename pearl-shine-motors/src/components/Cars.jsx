@@ -4,7 +4,7 @@ export const myCars= [{
     make: 'BMW',
     model: 'M4 Coupe',
     mileage: '',
-    year_of_prod: 2012,
+    year_of_prod: 2016,
     price: 500000,
     extra_details: {
         fuel: "Diesel",

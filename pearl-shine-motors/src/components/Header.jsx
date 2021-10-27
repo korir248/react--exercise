@@ -1,10 +1,11 @@
 import React from 'react'
+import SearchBar from './mini components/SearchBar'
 
 const Header = () => {
     return (
         
-        <div className="header">
-            <h4>Pearl Shine Motors</h4>
+        <div className="header"> 
+            <SearchBar/>            
         </div>            
     
     )

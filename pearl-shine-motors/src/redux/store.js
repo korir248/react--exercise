@@ -8,4 +8,3 @@ import thunk from "redux-thunk";
 const rootReducer = combineReducers({car: carReducer, cart: cartReducer})
 
 export const store= createStore(rootReducer, applyMiddleware(thunk))
-

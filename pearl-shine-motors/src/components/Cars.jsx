@@ -56,8 +56,8 @@ export const myCars= [{
 {
     id: 5,
     image: './../resources/car5.jpg',
-    make: 'Audi',
-    model: '',
+    make: 'BMW',
+    model: 'L3',
     mileage: '',
     year_of_prod: 2016,
     price: 780000,

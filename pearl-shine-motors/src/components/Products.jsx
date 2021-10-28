@@ -23,7 +23,7 @@ const Products = ()=>{
     return (
         <div className="single-car">
         {cars.map(singleCar=>(
-        <div className="card">
+        <div className="card" key={singleCar.id}>
         <div className="portrait">
         <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
         </div>

@@ -15,7 +15,7 @@ const SearchBar = ()=> {
 
     return (
         <div>
-            <div class="topnav">                
+            <div className="topnav">                
                 <input type="text" onChange={dummy} placeholder="Search by make, model or year.." ></input>
                 <button onClick={searchForCar}>Search</button>
             </div>    

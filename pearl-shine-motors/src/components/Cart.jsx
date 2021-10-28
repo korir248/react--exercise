@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 // import {  } from "react-router-handler";
 
 const Cart = ()=> {
-    const cart = useSelector(state => state.cart)
-    console.log(cart);
+    const cars = useSelector(state => state.car)
+    // console.log(cart);
     return (
         <div>
-        {cart}
+        {cars.id}
         </div>
     )
 }

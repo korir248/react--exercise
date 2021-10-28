@@ -1,8 +1,5 @@
-import { SEARCH_BY_MAKE_MODEL_YEAR } from "../types";
+import { SEARCH_BY_MAKE_MODEL_YEAR,ADD_INPUT_VALUE } from "../types";
 import { myCars } from "../../components/Cars";
-
-
-
 
 const cars = myCars
 
@@ -12,6 +9,10 @@ const carReducer = (state= cars,action)=>{
             return {
                 
             }
+            case ADD_INPUT_VALUE:
+                return {
+
+                }
     
         default:
             return state;

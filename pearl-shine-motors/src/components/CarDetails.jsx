@@ -8,7 +8,7 @@ const CarDetails = () => {
     const dispatch = useDispatch()
     const {id}= useParams()
 
-    const car =cars.find(car=>car.id ==id)
+    const car =cars.find(car=>car.id ===id)
 
     const addingToCart=(id)=>{
 
@@ -22,18 +22,25 @@ const CarDetails = () => {
 
     return (
         <div>
-        <p className="car-detail-title">{car.make} {car.model}</p>
-        <div className="portrait-car">            
-            <img className="car-image" src={car.image} alt="Car" height="400px"/>  
-        </div>
-            <div>
-                <p>Make: {car.make}</p> 
-                <p>Model: {car.model}</p>
-                <p>Mileage: {car.mileage}</p>
-                <p>Year of Production: {car.year_of_prod}</p>
-                <p>Price: Ksh. {car.price}</p>
+            <div className="car-details">
+            <p className="car-detail-title">{car.make} {car.model}</p>
+                <div className="portrait-car">            
+                    <img className="car-image" src={car.image} alt="Car" height="400px"/>  
+                </div>
+                <div>
+                    <p>Make: {car.make}</p> 
+                    <p>Model: {car.model}</p>
+                    <p>Mileage: {car.mileage}</p>
+                    <p>Year of Production: {car.year_of_prod}</p>
+                    <p>Price: Ksh. {car.price}</p>
+                    <p>Fuel: {car.extra_details.fuel}</p>
+                    <p>Transmision: {car.extra_details.transmission}</p>
+                    <p>Engine size: {car.extra_details.engine_size}</p>
+
+                    <button className="addtoCartBtn button" onClick={()=>addingToCart(car.id)}>Add to cart</button>
+                </div>
             </div>
-                <button className="addtoCartBtn button" onClick={()=>addingToCart(car.id)}>Add to cart</button>
+                
 
         </div>
     )

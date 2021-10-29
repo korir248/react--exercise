@@ -51,6 +51,8 @@ button{
   /* justify-content: space-around; */
   align-items: center;
   align-content: center;
+  width: 250px;
+  
   
 }
 .card{
@@ -62,14 +64,21 @@ button{
   
 }
 .portrait{
-  height: 400px;
-  width: 300px;
+  height: 300px;
+  width: 250px;
   align-items: center;
+  /* border: 1px solid black;
+  border-radius: 50px; */
   
+}
+.portrait-search{
+  height: 300px;
+
 }
 img{
   width: 100%;
   height: 100%;
+  /* border-radius: 50px; */
 }
 .cart-text{
   text-align: right;
@@ -111,4 +120,10 @@ tbody {
 .car-detail-title{
   font-family: cursive;
   font-size: larger;
+}
+.car-details{
+  font-family: cursive;
+  display: inline;
+  
+  
 }

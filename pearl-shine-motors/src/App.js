@@ -5,6 +5,7 @@ import Carousel from './components/Carousel';
 import Cart from './components/Cart';
 import { BrowserRouter,Route} from "react-router-dom";
 import CarDetails from './components/CarDetails';
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -22,6 +23,15 @@ function App() {
       <Route path="/details/:id">
         <Header/>
         <CarDetails/>
+      </Route>
+      <Route path="/search">
+        <Header/>
+        <Carousel/>
+        <Products/>
+      </Route>
+      <Route path="/search/:params">
+        <Header/>
+        <Search/>
       </Route>
     
     </BrowserRouter>    

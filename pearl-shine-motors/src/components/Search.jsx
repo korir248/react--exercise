@@ -1,0 +1,51 @@
+import React from 'react'
+import { useDispatch,useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+import { addToCart } from '../redux/actions/cartActions';
+import { useParams } from 'react-router';
+
+const Search = ()=> {
+    const {search,cart} = useSelector(state => state.cart)
+    const {params} =useParams();
+    console.log(params);
+    const dispatch = useDispatch()
+    
+    
+    const addingToCart=(id)=>{
+
+        console.log("Adding to Cart...")
+
+         dispatch(addToCart(id))
+
+
+        
+    
+         
+    }
+    return (
+        <div className="container">
+        <p className="section-title">Showing results for: {params} </p>
+        <div className="single-car">
+        {search.map(searchItem=>(
+        <div className="card" key={searchItem.id}>
+            <div className="portrait-search">
+            <Link to={`/details/${searchItem.id}`}>
+                <img className="car-image" src={searchItem.image} alt="Car" height="400px"/>
+            </Link>
+            </div>
+            <div>
+                <p>Make: {searchItem.make}</p> 
+                <p>Model: {searchItem.model}</p>
+                {/* <p>Mileage: {searchItem.mileage}</p> */}
+                <p>Year of Production: {searchItem.year_of_prod}</p>
+                <p>Price: Ksh. {searchItem.price}</p>
+            </div>
+                <button className="addtoCartBtn button" onClick={()=>addingToCart(searchItem.id)}>Add to cart</button>
+            </div>)
+            )}
+            </div>
+        </div>
+    )
+}
+
+export default Search

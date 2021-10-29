@@ -3,7 +3,8 @@ import { myCars } from "../../components/Cars";
 
 const initialState = {
     cart:[],
-    cars: myCars
+    cars: myCars,
+    search : []
 } 
 
 const cartReducer = (state= initialState,{type,payload})=>{
@@ -32,7 +33,7 @@ const cartReducer = (state= initialState,{type,payload})=>{
                                                     || car.year_of_prod.toLowerCase().includes(searchInput));            
             return {
                 ...state,
-                cars : filteredCars
+                search : filteredCars
             }                   
         case REMOVE_FROM_CART:
                         

@@ -7,7 +7,7 @@ const SearchBar = ()=> {
 
     const dispatch = useDispatch()
 
-    const searchForCar = () =>{
+    const searchForCar = (inputValue) =>{
         console.log("Searching...");
         dispatch(searchByMakeModelYear(inputValue))
 
@@ -17,7 +17,7 @@ const SearchBar = ()=> {
         <div>
             <div className="topnav">                
                 <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} placeholder="Search by make, model or year.." ></input>
-                <button onClick={searchForCar}>Search</button>
+                <button onClick={()=>searchForCar(inputValue)}>Search</button>
             </div>    
         </div>
     )

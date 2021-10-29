@@ -1,44 +1,48 @@
 import { addToCart } from '../redux/actions/cartActions'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
 
 const Products = ()=>{
-    const cars = useSelector(state => state.car)
+    // const {cars} = useSelector(state => state.car)
     
     // console.log(cars)
     
-    const myCart = useSelector(state => state.cart)
-    // console.log(myCart);
-    
+    const {cars,cart} = useSelector(state => state.cart)
 
     const dispatch = useDispatch()
     
-    const addingToCart=()=>{
-        dispatch(addToCart)
-        console.log("Added to Cart")
-        console.log(myCart);
+    const addingToCart=(id)=>{
+
+        console.log("Adding to Cart...")
+
+        if(1 >2){
+            console.log("1 < 2")
+
+        }else dispatch(addToCart(id))
+        
+    
          
     }
-    console.log(cars)
     return (
         <div className="container">
+        <p className="section-title">Available cars</p>
         <div className="single-car">
         {cars.map(singleCar=>(
         <div className="card" key={singleCar.id}>
             <div className="portrait">
-            <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
+            <Link to={`/details/${singleCar.id}`}>
+                <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
+            </Link>
             </div>
             <div>
                 <p>Make: {singleCar.make}</p> 
                 <p>Model: {singleCar.model}</p>
-                <p>{singleCar.mileage}</p>
-                <p>{singleCar.year_of_prod}</p>
+                <p>Mileage: {singleCar.mileage}</p>
+                <p>Year of Production: {singleCar.year_of_prod}</p>
                 <p>Price: Ksh. {singleCar.price}</p>
-
             </div>
-                
-                
-                <button className="addtoCartBtn button" onClick={addingToCart}>Add to cart</button>
+                <button className="addtoCartBtn button" onClick={()=>addingToCart(singleCar.id)}>Add to cart</button>
             </div>)
             )}
             </div>

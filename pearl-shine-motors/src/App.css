@@ -6,17 +6,29 @@ button{
 }
 .header{
   background-color: rgb(235, 174, 45);
-  height: 50px;
+  height: 80px;
   position: sticky;
   top: 0;
-  font-size: 25px;  
+  font-size: 25px;
+  /* align-content: center;  */
 }
 .topnav{
+  /* float: right; */
+  min-width: 600px;
+  
+}
+.cart-btn{
   float: right;
-  /* border: 4px solid black;
-  border-radius: 50px; */
+}
+.search-input{
+  height: 20px;
+  width: 600px;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 0px 10px;
 
 }
+
 .title{
   display: block;
   /* padding: 8px; */
@@ -76,4 +88,19 @@ img{
 .addtoCartBtn :hover{
   background-color: rgb(230, 159, 29);
   cursor: pointer;
+}
+.my-cart{
+  width: 100%;
+  /* border: 1px solid black; */
+  margin: 20px;
+  text-align: left;
+}
+tbody {
+  border: 1px solid black;
+}
+.remove{
+  background-color: red;
+}
+.section-title{
+  font-size: 25px;
 }

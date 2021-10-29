@@ -33,6 +33,7 @@ const Cart = ()=> {
                     </tr>
                 </thead>
                 <tbody>
+                {/* {cart.length == 0 ? () : } */}
                 
                 {cart?.map(singleCar=>(
                     <tr key={singleCar.id}>

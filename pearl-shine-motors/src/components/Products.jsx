@@ -16,10 +16,7 @@ const Products = ()=>{
 
         console.log("Adding to Cart...")
 
-        if(1 >2){
-            console.log("1 < 2")
-
-        }else dispatch(addToCart(id))
+         dispatch(addToCart(id))
         
     
          

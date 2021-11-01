@@ -14,14 +14,10 @@ const Search = ()=> {
     const addingToCart=(id)=>{
 
         console.log("Adding to Cart...")
-
          dispatch(addToCart(id))
-
-
-        
-    
          
     }
+
     return (
         <div className="container">
         <p className="section-title">Showing results for: {params} </p>
@@ -36,7 +32,7 @@ const Search = ()=> {
             <div>
                 <p>Make: {searchItem.make}</p> 
                 <p>Model: {searchItem.model}</p>
-                {/* <p>Mileage: {searchItem.mileage}</p> */}
+                <p>Mileage: {searchItem.mileage}</p>
                 <p>Year of Production: {searchItem.year_of_prod}</p>
                 <p>Price: Ksh. {searchItem.price}</p>
             </div>

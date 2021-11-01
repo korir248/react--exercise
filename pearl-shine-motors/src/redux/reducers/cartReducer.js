@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, INCREASE_QUANTITY, REDUCE_QUANTITY,EMPTY_CART, ITEM_IN_CART, SEARCH_BY_MAKE_MODEL_YEAR } from "../types";
+import { ADD_TO_CART, REMOVE_FROM_CART, EMPTY_CART, ITEM_IN_CART, SEARCH_BY_MAKE_MODEL_YEAR } from "../types";
 import { myCars } from "../../components/Cars";
 
 const initialState = {
@@ -20,20 +20,24 @@ const cartReducer = (state= initialState,{type,payload})=>{
                 ...state, 
                 cart: [...state.cart, specificCar ]
             }
-        // case ITEM_IN_CART:
+        case ITEM_IN_CART:
 
-        //     return {
-        //         ...state,
-        //         cart: state.cart.filter((item)=>item.id==payload),
-        //     }
-        case SEARCH_BY_MAKE_MODEL_YEAR:
-            let searchInput =payload.toLowerCase();            
-            let filteredCars = state.cars.filter(car => car.make.toLowerCase().includes(searchInput) 
-                                                    || car.model.toLowerCase().includes(searchInput) 
-                                                    || car.year_of_prod.toLowerCase().includes(searchInput));            
             return {
                 ...state,
-                search : filteredCars
+                cart: state.cart.filter((item)=>item.id===payload),
+            }
+        case SEARCH_BY_MAKE_MODEL_YEAR:
+            let searchInput =payload.toLowerCase();            
+            let filteredCars = state.cars.find(car => car.make.toLowerCase().includes(searchInput) 
+                                                    || car.model.toLowerCase().includes(searchInput) 
+                                                    || car.year_of_prod.toLowerCase().includes(searchInput));            
+
+            console.log(filteredCars);
+            state.search.push(filteredCars)
+
+            console.log(state.search);
+            return {
+                ...state
             }                   
         case REMOVE_FROM_CART:
                         
@@ -50,14 +54,14 @@ const cartReducer = (state= initialState,{type,payload})=>{
                 cars: myCars
                     
             }
-        case INCREASE_QUANTITY:
-            return{
+        // case INCREASE_QUANTITY:
+        //     return{
 
-            }
-        case REDUCE_QUANTITY:
-            return {
+        //     }
+        // case REDUCE_QUANTITY:
+        //     return {
 
-            }
+        //     }
         
         default:
             return state;

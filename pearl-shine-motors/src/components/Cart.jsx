@@ -9,12 +9,10 @@ const Cart = ()=> {
     const dispatch = useDispatch()
     const removingCartItem = (id)=>{
         dispatch(removeFromCart(id))
-    }
-    
+    } 
 
     const emptyingCart = ()=>{
         dispatch(emptyCart())
-        console.log("Emptying cart...");
     }
     console.log(cart)
     return (
@@ -29,7 +27,6 @@ const Cart = ()=> {
                         <td>Price</td>
                         <td>Mileage(Kms)</td>
                         <td>Quantity</td>
-                        <td></td>
                         <td><button className="remove" onClick={()=>emptyingCart()}>Empty Cart</button></td>
                     </tr>
                 </thead>
@@ -42,7 +39,7 @@ const Cart = ()=> {
                         <td>{singleCar.model}</td>
                         <td>{singleCar.price}</td>
                         <td>{singleCar.mileage}</td>
-                        <td>{singleCar.quantity}</td>                      <td></td>
+                        <td>{singleCar.quantity}</td>                     
                         <td><button className="remove" onClick={()=>removingCartItem(singleCar.id)}>Remove</button></td>
                     </tr>
                 ))}

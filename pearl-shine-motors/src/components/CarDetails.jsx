@@ -8,7 +8,10 @@ const CarDetails = () => {
     const dispatch = useDispatch()
     const {id}= useParams()
 
-    const car =cars.find(car=>car.id ===id)
+    const car =cars.filter(car=>car.id == id)
+
+    console.log(id);
+    console.log(car)
 
     const addingToCart=(id)=>{
 
@@ -22,25 +25,30 @@ const CarDetails = () => {
 
     return (
         <div>
-            <div className="car-details">
-            <p className="car-detail-title">{car.make} {car.model}</p>
-                <div className="portrait-car">            
-                    <img className="car-image" src={car.image} alt="Car" height="400px"/>  
-                </div>
-                <div>
-                    <p>Make: {car.make}</p> 
-                    <p>Model: {car.model}</p>
-                    <p>Mileage: {car.mileage}</p>
-                    <p>Year of Production: {car.year_of_prod}</p>
-                    <p>Price: Ksh. {car.price}</p>
-                    <p>Fuel: {car.extra_details.fuel}</p>
-                    <p>Transmision: {car.extra_details.transmission}</p>
-                    <p>Engine size: {car.extra_details.engine_size}</p>
-
-                    <button className="addtoCartBtn button" onClick={()=>addingToCart(car.id)}>Add to cart</button>
-                </div>
+            <div className="single-car">
+                {car?.map(singleCar=>(
+                <div className="card" key={singleCar.id}>
+                    <div className="portrait">
+                    
+                        <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
+                    
+                    </div>
+                    <div>
+                        <p>Make: {singleCar.make}</p> 
+                        <p>Model: {singleCar.model}</p>
+                        <p>Mileage: {singleCar.mileage}</p>
+                        <p>Year of Production: {singleCar.year_of_prod}</p>
+                        <p>Price: Ksh. {singleCar.price}</p>
+                        <p>Fuel: {singleCar.extra_details.fuel}</p>
+                        <p>Transmission: {singleCar.extra_details.transmission} </p>
+                        <p>Engine size: {singleCar.extra_details.engine_size} </p>
+                    </div>
+                        <button className="addtoCartBtn button" onClick={()=>addingToCart(singleCar.id)}>Add to cart</button>
+                    </div>)
+                    )}
             </div>
-                
+                   
+             
 
         </div>
     )

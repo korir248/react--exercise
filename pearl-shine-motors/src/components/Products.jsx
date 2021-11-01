@@ -8,7 +8,7 @@ const Products = ()=>{
     
     // console.log(cars)
     
-    const {cars,cart} = useSelector(state => state.cart)
+    const {cars} = useSelector(state => state.cart)
 
     const dispatch = useDispatch()
     
@@ -25,7 +25,7 @@ const Products = ()=>{
         <div className="container">
         <p className="section-title">Available cars</p>
             <div className="single-car">
-                {cars.map(singleCar=>(
+                {cars?.map(singleCar=>(
                 <div className="card" key={singleCar.id}>
                     <div className="portrait">
                     <Link to={`/details/${singleCar.id}`}>

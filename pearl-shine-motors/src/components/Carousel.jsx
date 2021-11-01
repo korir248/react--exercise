@@ -2,9 +2,9 @@ import React from 'react'
 
 
 const Carousel = () => { 
-    const carouselImages = [
-        "./../resources/carousel/car1.jpg"
-    ]
+    // const carouselImages = [
+    //     "./../resources/carousel/car1.jpg"
+    // ]
 
 
     

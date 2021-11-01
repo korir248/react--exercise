@@ -25,9 +25,8 @@ function App() {
         <CarDetails/>
       </Route>
       <Route path="/search">
-        <Header/>
-        <Carousel/>
-        <Products/>
+        
+        
       </Route>
       <Route path="/search/:params">
         <Header/>

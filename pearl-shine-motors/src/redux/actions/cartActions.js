@@ -1,4 +1,4 @@
-import {ADD_TO_CART, EMPTY_CART, INCREASE_QUANTITY, ITEM_IN_CART, REDUCE_QUANTITY, REMOVE_FROM_CART} from '../types'
+import {ADD_TO_CART, EMPTY_CART, ITEM_IN_CART,  REMOVE_FROM_CART} from '../types'
 
 
 export const addToCart = (id)=>{

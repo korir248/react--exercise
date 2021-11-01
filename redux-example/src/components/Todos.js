@@ -11,14 +11,14 @@ function Todos() {
         <>
           <h4
             key={todo.id}
-            
+            style={{ textDecoration: todo.is_complete ? "line-through" : "" }}          
           >
             {todo.title}
           </h4>
           <div style={{ display: "flex" }}>
             <button onClick={() => dispatch(removeTodo(todo.id))}>x</button>
             <button onClick={() => dispatch(markTodoAsComplete(todo.id))}>
-              completed
+              {todo.is_complete ? "Mark as incomplete" : "Mark as complete"}
             </button>
           </div>
         </>

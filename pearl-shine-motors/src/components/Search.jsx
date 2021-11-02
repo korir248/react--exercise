@@ -8,6 +8,7 @@ const Search = ()=> {
     const {search,cart} = useSelector(state => state.cart)
     const {params} =useParams();
     console.log(params);
+    console.log(search);
     const dispatch = useDispatch()
     
     
@@ -20,10 +21,11 @@ const Search = ()=> {
 
     return (
         <div className="container">
-        <p className="section-title">Showing results for: {params} </p>
+        <p className="section-title">Showing {search.length} {search.length == 1? "result" : "results"} for: {params} </p>
         <div className="single-car">
         {search.map(searchItem=>(
         <div className="card" key={searchItem.id}>
+        
             <div className="portrait-search">
             <Link to={`/details/${searchItem.id}`}>
                 <img className="car-image" src={searchItem.image} alt="Car" height="400px"/>

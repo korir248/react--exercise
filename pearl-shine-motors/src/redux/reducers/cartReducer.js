@@ -28,16 +28,14 @@ const cartReducer = (state= initialState,{type,payload})=>{
             }
         case SEARCH_BY_MAKE_MODEL_YEAR:
             let searchInput =payload.toLowerCase();            
-            let filteredCars = state.cars.find(car => car.make.toLowerCase().includes(searchInput) 
+            let filteredCars = state.cars.filter(car => car.make.toLowerCase().includes(searchInput) 
                                                     || car.model.toLowerCase().includes(searchInput) 
                                                     || car.year_of_prod.toLowerCase().includes(searchInput));            
 
             console.log(filteredCars);
-            state.search.push(filteredCars)
-
-            console.log(state.search);
             return {
-                ...state
+                ...state,
+                search: filteredCars
             }                   
         case REMOVE_FROM_CART:
                         

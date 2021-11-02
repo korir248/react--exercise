@@ -44,14 +44,14 @@ button{
   margin: 20px;
 } */
 .single-car{
-  padding: 40px;
+  /* padding: 40px; */
   padding-left: 30px;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-around; */
   align-items: center;
   align-content: center;
-  width: 250px;
+  /* width: 250px; */
   
   
 }
@@ -92,6 +92,7 @@ img{
 
 .addtoCartBtn {
   cursor: default;
+  /* width: 200px; */
 }
 .addtoCartBtn :hover{
   background-color: rgb(230, 159, 29);
@@ -121,9 +122,27 @@ tbody {
   font-family: cursive;
   font-size: larger;
 }
+.single-car-details{
+  display: flex;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+.single-car-image{
+  
+}
+.car-details-image{
+  height: 650px;
+  width: 550px;
+  
+}
 .car-details{
   font-family: cursive;
   display: flex;
-  
+  flex-direction: column;
+  width:max-content;
+  /* float: right; */
+  /* flex: 0.4;  */
+  align-items: center;
+  justify-content: center;
   
 }

@@ -25,15 +25,18 @@ const CarDetails = () => {
 
     return (
         <div>
-            <div className="single-car">
+            
                 {car?.map(singleCar=>(
-                <div className="card" key={singleCar.id}>
-                    <div className="portrait">
+                <div>
+                    <p className="car-detail-title">Details for: {singleCar.make} {singleCar.model}</p>
+                <div className="single-car-details" key={singleCar.id}>
                     
-                        <img className="car-image" src={singleCar.image} alt="Car" height="400px"/>
+                    <div className="car-details-image">
+                    
+                        <img className="car-image single-car-image" src={singleCar.image} alt={singleCar.make} height="400px"/>
                     
                     </div>
-                    <div>
+                    <div className="car-details">
                         <p>Make: {singleCar.make}</p> 
                         <p>Model: {singleCar.model}</p>
                         <p>Mileage: {singleCar.mileage}</p>
@@ -42,14 +45,12 @@ const CarDetails = () => {
                         <p>Fuel: {singleCar.extra_details.fuel}</p>
                         <p>Transmission: {singleCar.extra_details.transmission} </p>
                         <p>Engine size: {singleCar.extra_details.engine_size} </p>
-                    </div>
                         <button className="addtoCartBtn button" onClick={()=>addingToCart(singleCar.id)}>Add to cart</button>
-                    </div>)
-                    )}
-            </div>
-                   
-             
-
+                    </div>
+                </div>
+                        
+                </div>)
+                )}
         </div>
     )
 

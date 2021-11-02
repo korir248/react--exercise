@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
+    
       <Route path="/" exact>
         <Header/>
         <Carousel/>
@@ -33,9 +34,7 @@ function App() {
         <Search/>
       </Route>
       
-      
-    
-    </BrowserRouter>    
+      </BrowserRouter>    
     
     
 

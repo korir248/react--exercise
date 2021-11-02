@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { increaseQuantity, reduceQuantity} from './../../redux/actions/cartActions'
+import { increaseQuantity, reduceQuantity} from './../../redux/actions/cartActions';
 
-const addToCart = ({id})=> {
+const AddRemoveFromCart = ({id})=> {
 
     const {cart} = useSelector(state => state.cart)
+    const itemInCart = cart.find(cartItem=>cartItem.id === id)
+
     
     const dispatch = useDispatch()
     const increasingQuantity= (id)=>{
@@ -18,7 +20,7 @@ const addToCart = ({id})=> {
         <div>
             <div>
                 <button onClick={()=>reducingQuantity()}>-</button>
-                {id}
+                {itemInCart.quantity}
                 <button onClick={()=>increasingQuantity()}>+</button>
             </div>
             
@@ -26,4 +28,4 @@ const addToCart = ({id})=> {
     )
 }
 
-export default addToCart
+export default AddRemoveFromCart

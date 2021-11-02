@@ -12,14 +12,25 @@ const cartReducer = (state= initialState,{type,payload})=>{
         case ADD_TO_CART:
             const specificCar = state.cars.find(car=>car.id===payload)
 
-            // const itemInCart = state.cart.filter(cartItem=>cartItem.id === specificCar.id)
+            const itemInCart = state.cart.find(cartItem=>cartItem.id === specificCar.id)
 
             // console.log(itemInCart)
             console.log(specificCar)
-            return {
-                ...state, 
-                cart: [...state.cart, specificCar ]
+            if(itemInCart){
+                return {
+                    ...state
+                }
+                    
+            }else{
+                return {
+                    ...state, 
+                    cart: [...state.cart, specificCar ]
+                }
             }
+            // return {
+            //     ...state, 
+            //     cart: [...state.cart, specificCar ]
+            // }
         case ITEM_IN_CART:
 
             return {

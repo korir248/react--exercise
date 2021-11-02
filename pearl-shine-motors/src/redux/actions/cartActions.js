@@ -1,4 +1,4 @@
-import {ADD_TO_CART, EMPTY_CART, ITEM_IN_CART,  REMOVE_FROM_CART} from '../types'
+import {ADD_TO_CART, EMPTY_CART, ITEM_IN_CART,  REMOVE_FROM_CART, INCREASE_QUANTITY, REDUCE_QUANTITY} from '../types'
 
 
 export const addToCart = (id)=>{
@@ -30,19 +30,19 @@ export const itemIsInCart = (id)=>{
     }
 }
 
-// export const increaseQuantity = (quantity)=>{
-//     return {
-//         type: INCREASE_QUANTITY,
-//         payload: quantity
-//     }
-// }
+export const increaseQuantity = (id)=>{
+    return {
+        type: INCREASE_QUANTITY,
+        payload: id
+    }
+}
 
-// export const reduceQuantity = (quantity)=>{
-//     return {
-//         type: REDUCE_QUANTITY,
-//         payload: quantity
+export const reduceQuantity = (id)=>{
+    return {
+        type: REDUCE_QUANTITY,
+        payload: id
 
-//     }
-// }
+    }
+}
 
 

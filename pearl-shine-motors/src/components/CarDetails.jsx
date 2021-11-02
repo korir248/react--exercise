@@ -27,7 +27,7 @@ const CarDetails = () => {
         <div>
             
                 {car?.map(singleCar=>(
-                <div>
+                <div key={singleCar.id}>
                     <p className="car-detail-title">Details for: {singleCar.make} {singleCar.model}</p>
                 <div className="single-car-details" key={singleCar.id}>
                     

@@ -1,6 +1,5 @@
 import { addToCart } from '../redux/actions/cartActions'
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 
 const Products = ()=>{
@@ -16,16 +15,17 @@ const Products = ()=>{
 
         console.log("Adding to Cart...")
 
-         dispatch(addToCart(id))
-        
+         dispatch(addToCart(id))   
     
          
     }
+    
     return (
         <div className="container">
         <p className="section-title">Available cars</p>
             <div className="single-car">
                 {cars?.map(singleCar=>(
+                
                 <div className="card" key={singleCar.id}>
                     <div className="portrait">
                     <Link to={`/details/${singleCar.id}`}>

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Products from './components/Products';
 import Carousel from './components/Carousel';
 import Cart from './components/Cart';
-import { BrowserRouter,Route} from "react-router-dom";
+import { BrowserRouter, Route, Redirect} from "react-router-dom";
 import CarDetails from './components/CarDetails';
 import Search from "./components/Search";
 
@@ -24,14 +24,16 @@ function App() {
         <Header/>
         <CarDetails/>
       </Route>
-      <Route path="/search">
-        
+      <Route path="/search" exact>
+        <Redirect to="/"/>  
         
       </Route>
       <Route path="/search/:params">
         <Header/>
         <Search/>
       </Route>
+      
+      
     
     </BrowserRouter>    
     

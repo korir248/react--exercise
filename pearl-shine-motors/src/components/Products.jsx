@@ -14,6 +14,7 @@ const Products = ()=>{
 
     const dispatch = useDispatch()
     
+    
     const addingToCart=(id)=>{
 
         console.log("Adding to Cart...")
@@ -41,7 +42,6 @@ const Products = ()=>{
                             <div>
                                 <p>Make: {singleCar.make}</p> 
                                 <p>Model: {singleCar.model}</p>
-                                {/* <p>Mileage: {singleCar.mileage}</p> */}
                                 <p>Year of Production: {singleCar.year_of_prod}</p>
                                 <p>Price: Ksh. {singleCar.price}</p>
                             </div>

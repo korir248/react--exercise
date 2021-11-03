@@ -2,9 +2,10 @@ import React from 'react'
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from "../redux/actions/cartActions";
+import AddRemoveFromCart from './mini components/AddRemoveFromCart';
 
 const CarDetails = () => {
-    const {cars} = useSelector(state => state.cart)
+    const {cars,cart} = useSelector(state => state.cart)
     const dispatch = useDispatch()
     const {id}= useParams()
 
@@ -12,14 +13,13 @@ const CarDetails = () => {
 
     console.log(id);
     console.log(car)
+    const itemInCart = cart.find(cartItem=>cartItem.id === id)
 
     const addingToCart=(id)=>{
 
         console.log("Adding to Cart...")
 
-        dispatch(addToCart(id))        
-    
-         
+        dispatch(addToCart(id))    
     }
         
 
@@ -45,7 +45,9 @@ const CarDetails = () => {
                         <p>Fuel: {singleCar.extra_details.fuel}</p>
                         <p>Transmission: {singleCar.extra_details.transmission} </p>
                         <p>Engine size: {singleCar.extra_details.engine_size} </p>
-                        <button className="addtoCartBtn button" onClick={()=>addingToCart(singleCar.id)}>Add to cart</button>
+                        {itemInCart ? <AddRemoveFromCart id={singleCar.id}/>
+                                    : <button className="addtoCartBtn button" onClick={()=>addingToCart(singleCar.id)}>Add to cart</button>
+                                }
                     </div>
                 </div>
                         

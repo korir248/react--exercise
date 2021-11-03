@@ -127,9 +127,9 @@ tbody {
   margin: 20px;
   justify-content: space-evenly;
 }
-.single-car-image{
+/* .single-car-image{
   
-}
+} */
 .car-details-image{
   height: 650px;
   width: 550px;
@@ -154,4 +154,7 @@ thead{
 }
 table {
   width: 100%;
+}
+.grand-total{
+  text-decoration: underline;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect} from 'react'
 import { useSelector } from "react-redux";
 import { emptyCart, removeFromCart } from "../redux/actions/cartActions";
 import { useDispatch } from 'react-redux';
@@ -14,7 +14,15 @@ const Cart = ()=> {
     const emptyingCart = ()=>{
         dispatch(emptyCart())
     }
-    console.log(cart)
+    console.log(cart.length)
+
+    // const getTotal = (price, quantity)=>{
+    //     return price *quantity
+    // }
+    useEffect(() => {        
+        
+    }, [cart])
+
     return (
         <div>
             <div>
@@ -39,10 +47,14 @@ const Cart = ()=> {
                         <td>{singleCar.model}</td>
                         <td>{singleCar.price}</td>
                         <td>{singleCar.mileage}</td>
-                        <td>{singleCar.quantity}</td>                     
+                        <td>{singleCar.quantity}</td>
+                        {/* <td>{getTotal(singleCar.price, singleCar.quantity)}</td>                      */}
                         <td><button className="remove" onClick={()=>removingCartItem(singleCar.id)}>Remove</button></td>
                     </tr>
                 ))}
+                {/* <tr>
+                    <td className="grand-total">Grand total</td>
+                </tr> */}
                 </tbody>
                 </table>
                 

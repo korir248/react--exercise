@@ -13,8 +13,6 @@ const cartReducer = (state= initialState,{type,payload})=>{
             const specificCar = state.cars.find(car=>car.id===payload)
 
             const itemInCart = state.cart.find(cartItem=>cartItem.id === specificCar.id)
-
-            // console.log(itemInCart)
             console.log(specificCar)
             if(itemInCart){
                 return {
@@ -33,7 +31,6 @@ const cartReducer = (state= initialState,{type,payload})=>{
                                                     || car.model.toLowerCase().includes(searchInput) 
                                                     || car.year_of_prod.toLowerCase().includes(searchInput));            
 
-            console.log(filteredCars);
             return {
                 ...state,
                 search: filteredCars
@@ -57,13 +54,34 @@ const cartReducer = (state= initialState,{type,payload})=>{
             console.log("Increasing quantity")
             return {
                 ...state,
-                cart: [...state.cart]
+                cart: [...state.cart.map(cartItem =>
+                    cartItem.id === payload ?
+                    {...cartItem, quantity: cartItem.quantity + 1}
+                    : cartItem
+
+                )]
             }
         case REDUCE_QUANTITY:
-            console.log("Reducing quantity")
+            
             return {
-                ...state
+                ...state,
+                cart: [...state.cart.map(cartItem =>
+                    {if(cartItem.id === payload){
+                        if (cartItem.quantity === 0) {
+                            return {
+                                cart: [...state.cart.filter((item)=>item.id!==payload)]
+                            }                            
+                            
+                        } else {
+                            return {...cartItem, quantity: cartItem.quantity > 1 && cartItem.quantity - 1 }
+                            
+                            
+                        }
+                         
+
+                    }else return cartItem })]
             }
+            console.log("Reducing quantity")
         
         default:
             return state;

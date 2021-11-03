@@ -5,9 +5,7 @@ import { increaseQuantity, reduceQuantity} from '../../redux/actions/cartActions
 const AddRemoveFromCart = ({id})=> {
 
     const {cart} = useSelector(state => state.cart)
-    const itemInCart = cart.find(cartItem=>cartItem.id === id)
-
-    
+    const itemInCart = cart.find(cartItem=>cartItem.id === id)    
     const dispatch = useDispatch()
     const increasingQuantity= (id)=>{
         dispatch(increaseQuantity(id))
@@ -19,9 +17,9 @@ const AddRemoveFromCart = ({id})=> {
     return (
         <div>
             <div>
-                <button onClick={()=>reducingQuantity()}>-</button>
+                <button onClick={()=>reducingQuantity({id})}>-</button>
                 {itemInCart.quantity}
-                <button onClick={()=>increasingQuantity()}>+</button>
+                <button onClick={()=>increasingQuantity({id})}>+</button>
             </div>
             
         </div>

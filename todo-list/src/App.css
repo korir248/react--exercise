@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  /* background-color: grey; */
+}
+
+
+.header{
+  text-align: left;
+  background-color: lightblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+.add-todo{
+  font-family: cursive;
+}
+#root{
+  font-family: cursive;
+}
+.todos{
+  text-align: center;
+
+}
+.add-todo-btn{
+  padding: 5px;
+}
